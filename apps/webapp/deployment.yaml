@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: webapp
-          image: ghcr.io/edurekauser26/gitops-webapp:1.0.0
+          image: ghcr.io/edurekauser26/gitops-webapp:1.1.0
           ports:
             - containerPort: 3000
           envFrom:
