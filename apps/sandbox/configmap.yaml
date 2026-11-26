@@ -4,4 +4,4 @@ kind: ConfigMap
 metadata:
   name: sandbox-config
 data:
-  PURPOSE: "Testing namespace creation"
+  PURPOSE: "Testing the Argo CD CLI"
