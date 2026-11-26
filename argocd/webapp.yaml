@@ -13,6 +13,12 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: webapp
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      name: webapp
+      jsonPointers:
+        - /spec/replicas
   syncPolicy:
     automated:
       enabled: true
@@ -22,3 +28,4 @@ spec:
       - ApplyOutOfSyncOnly=true
       - ServerSideApply=true
       - PruneLast=true
+      - RespectIgnoreDifferences=true
