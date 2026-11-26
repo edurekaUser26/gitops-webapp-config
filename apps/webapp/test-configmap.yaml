@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: webapp-test-config
+data:
+  PURPOSE: "Testing automated sync"
