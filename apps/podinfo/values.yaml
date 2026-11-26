@@ -3,5 +3,5 @@ replicaCount: 2
 redis:
   enabled: false
 ui:
-  message: "Values from Git"
+  message: "Updated through Git Commit"
   color: "#6a1b9a"
