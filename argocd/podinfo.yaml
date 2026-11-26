@@ -10,7 +10,7 @@ spec:
     repoURL: https://stefanprodan.github.io/podinfo
     chart: podinfo
     targetRevision: 6.17.0
-    helm:
+        helm:
       valueFiles:
         - values-prod.yaml
       valuesObject:
@@ -19,6 +19,11 @@ spec:
         ui:
           message: "Deployed by Argo CD"
           color: "#2e7d32"
+      parameters:
+        - name: replicaCount
+          value: "2"
+        - name: ui.message
+          value: "Set by a parameter"
   destination:
     server: https://kubernetes.default.svc
     namespace: podinfo
