@@ -6,10 +6,19 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
+    source:
     repoURL: https://stefanprodan.github.io/podinfo
     chart: podinfo
     targetRevision: 6.17.0
+    helm:
+      valueFiles:
+        - values-prod.yaml
+      valuesObject:
+        redis:
+          enabled: false
+        ui:
+          message: "Deployed by Argo CD"
+          color: "#2e7d32"
   destination:
     server: https://kubernetes.default.svc
     namespace: podinfo
