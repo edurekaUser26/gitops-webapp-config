@@ -6,11 +6,11 @@ metadata:
   namespace: argocd
 spec:
   project: default
-    source:
+  source:
     repoURL: https://stefanprodan.github.io/podinfo
     chart: podinfo
     targetRevision: 6.17.0
-        helm:
+    helm:
       valueFiles:
         - values-prod.yaml
       valuesObject:
