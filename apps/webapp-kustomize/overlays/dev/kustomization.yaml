@@ -6,7 +6,8 @@ resources:
   - ../../base
 images:
   - name: ghcr.io/edurekauser26/gitops-webapp
-    newTag: 1.1.0
+    newName: ghcr.io/edurekauser26/gitops-webapp
+    newTag: 5126484
 patches:
   - patch: |-
       apiVersion: apps/v1
