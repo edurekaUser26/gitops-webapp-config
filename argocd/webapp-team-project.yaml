@@ -1,0 +1,14 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: webapp-team
+  namespace: argocd
+spec:
+  description: Webapp environments owned by the webapp team
+  sourceRepos:
+    - https://github.com/edurekaUser26/gitops-webapp-config.git
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: webapp-*
+  clusterResourceWhitelist: []
