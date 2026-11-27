@@ -4,7 +4,6 @@ kind: Kustomization
 namespace: webapp-dev
 resources:
   - ../../base
-  - clusterrole.yaml
 images:
   - name: ghcr.io/edurekauser26/gitops-webapp
     newTag: 1.1.0
