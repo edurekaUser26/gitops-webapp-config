@@ -8,23 +8,23 @@ spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   generators:
-    - list:
-        elements:
-          - env: dev
-          - env: staging
-          - env: prod
+    - git:
+        repoURL: https://github.com/edurekaUser26/gitops-webapp-config.git
+        revision: HEAD
+        directories:
+          - path: apps/webapp-kustomize/overlays/*
   template:
     metadata:
-      name: webapp-{{.env}}
+      name: webapp-{{.path.basename}}
     spec:
       project: webapp-team
       source:
         repoURL: https://github.com/edurekaUser26/gitops-webapp-config.git
         targetRevision: HEAD
-        path: apps/webapp-kustomize/overlays/{{.env}}
+        path: "{{.path.path}}"
       destination:
         server: https://kubernetes.default.svc
-        namespace: webapp-{{.env}}
+        namespace: webapp-{{.path.basename}}
       syncPolicy:
         automated:
           enabled: true
