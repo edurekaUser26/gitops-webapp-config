@@ -4,6 +4,8 @@ kind: Kustomization
 namespace: webapp-staging
 resources:
   - ../../base
+  - db-migrate-job.yaml
+  - smoke-test-job.yaml
 images:
   - name: ghcr.io/edurekauser26/gitops-webapp
     newTag: 1.0.0
