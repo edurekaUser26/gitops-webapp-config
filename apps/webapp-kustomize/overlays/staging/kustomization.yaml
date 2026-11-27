@@ -8,7 +8,7 @@ resources:
   - smoke-test-job.yaml
 images:
   - name: ghcr.io/edurekauser26/gitops-webapp
-    newTag: 1.0.0
+    newTag: 1.1.0
 patches:
   - patch: |-
       apiVersion: apps/v1
