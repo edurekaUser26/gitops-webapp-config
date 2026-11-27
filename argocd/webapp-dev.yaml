@@ -5,7 +5,7 @@ metadata:
   name: webapp-dev
   namespace: argocd
 spec:
-  project: default
+  project: webapp-team
   source:
     repoURL: https://github.com/edurekaUser26/gitops-webapp-config.git
     targetRevision: HEAD
